@@ -46,12 +46,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/avocode/FormExtensions.git",
-                "reference": "66e95eb7c4271f81f06dd5588fdb3899ec3b92a0"
+                "reference": "178ee272e8476c95ff81a84b4c55cf7e55592475"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avocode/FormExtensions/zipball/66e95eb7c4271f81f06dd5588fdb3899ec3b92a0",
-                "reference": "66e95eb7c4271f81f06dd5588fdb3899ec3b92a0",
+                "url": "https://api.github.com/repos/avocode/FormExtensions/zipball/178ee272e8476c95ff81a84b4c55cf7e55592475",
+                "reference": "178ee272e8476c95ff81a84b4c55cf7e55592475",
                 "shasum": ""
             },
             "require": {
@@ -90,7 +90,7 @@
                     "homepage": "https://github.com/avocode/FormExtensions/graphs/contributors"
                 }
             ],
-            "time": "2013-12-05 19:37:35"
+            "time": "2013-12-05 22:10:16"
         },
         {
             "name": "cedriclombardot/admingenerator-generator-bundle",
@@ -99,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle.git",
-                "reference": "d00da50cdd6efecab0473c9655b801d2dc0177cf"
+                "reference": "2c68855cc7728664bfb9aa3cd4cbf2097d5d8890"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony2admingenerator/AdmingeneratorGeneratorBundle/zipball/d00da50cdd6efecab0473c9655b801d2dc0177cf",
-                "reference": "d00da50cdd6efecab0473c9655b801d2dc0177cf",
+                "url": "https://api.github.com/repos/symfony2admingenerator/AdmingeneratorGeneratorBundle/zipball/2c68855cc7728664bfb9aa3cd4cbf2097d5d8890",
+                "reference": "2c68855cc7728664bfb9aa3cd4cbf2097d5d8890",
                 "shasum": ""
             },
             "require": {
@@ -164,7 +164,7 @@
                 "generator",
                 "yaml"
             ],
-            "time": "2013-11-30 06:50:30"
+            "time": "2013-12-05 22:23:31"
         },
         {
             "name": "cedriclombardot/twig-generator",

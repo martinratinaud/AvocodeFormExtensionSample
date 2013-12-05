@@ -9,14 +9,37 @@ class DashboardMenuBuilder extends AdmingeneratorMenuBuilder
 {
     protected $translation_domain = 'Admin';
 
+    /**
+     * @param FactoryInterface $factory
+     * @param array $options
+     * @return ItemInterface
+     */
     public function company(FactoryInterface $factory, array $options)
     {
-        $menu = $factory->createItem('root');
+        return $this->createEntries($factory->createItem('root'), 'Company');
+    }
 
-        $menu->setChildrenAttributes(array('class' => 'nav nav-list dashboard-company'));
-        $this->addHeader($menu, 'dashboard.company.title');
-        $this->addLinkRoute($menu, 'dashboard.company.list', 'Application_AdminBundle_Company_list')->setExtra('icon', 'icon-search');
-        $this->addLinkRoute($menu, 'dashboard.company.new', 'Application_AdminBundle_Company_new')->setExtra('icon', 'icon-plus');
+    /**
+     * @param FactoryInterface $factory
+     * @param array $options
+     * @return Ambigous ItemInterface
+     */
+    public function product(FactoryInterface $factory, array $options)
+    {
+        return $this->createEntries($factory->createItem('root'), 'Product');
+    }
+
+    /**
+     * @param ItemInterface $menu
+     * @param string $entityName
+     * @return ItemInterface
+     */
+    protected function createEntries(ItemInterface $menu, $entityName)
+    {
+        $menu->setChildrenAttributes(array('class' => 'nav nav-list dashboard-' . strtolower($entityName)));
+        $this->addHeader($menu, sprintf('dashboard.%s.title', strtolower($entityName)));
+        $this->addLinkRoute($menu, sprintf('dashboard.%s.list', strtolower($entityName)), sprintf('Application_AdminBundle_%s_list', $entityName))->setExtra('icon', 'icon-search');
+        $this->addLinkRoute($menu, sprintf('dashboard.%s.new', strtolower($entityName)), sprintf('Application_AdminBundle_%s_new', $entityName))->setExtra('icon', 'icon-plus');
 
         return $menu;
     }

@@ -1,0 +1,21 @@
+Application\AdminBundle\Entity\Media:
+    type: entity
+    table: null
+    repositoryClass: Application\AdminBundle\Entity\Repository\MediaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        file:
+            type: string
+            length: 255
+        type:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

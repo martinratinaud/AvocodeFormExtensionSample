@@ -1,0 +1,15 @@
+Application\AdminBundle\Entity\Library:
+    type: entity
+    table: null
+    repositoryClass: Application\AdminBundle\Entity\Repository\LibraryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

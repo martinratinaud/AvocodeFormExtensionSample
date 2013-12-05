@@ -1,0 +1,54 @@
+generator: admingenerator.generator.doctrine
+params:
+    model: Application\AdminBundle\Entity\Product
+    namespace_prefix: Application
+    concurrency_lock: ~
+    bundle_name: AdminBundle
+    pk_requirement: ~
+    fields:
+        color:
+            formType: afe_mini_colors
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: product.title.list
+            display: ~
+            actions:
+                new: ~
+            object_actions:
+                edit: ~
+                delete: ~
+    filters:
+        params:
+            display: ~
+    new:
+        params:
+            title: product.title.new
+            display: ~
+            actions:
+                save: ~
+                list: ~
+    edit:
+        params:
+            title: "product.title.edit|{ %object%: Product.name }|"
+            display: ~
+            actions:
+                save: ~
+                list: ~
+    show:
+        params:
+            title: "product.title.show|{ %object%: Product.name }|"
+            display: ~
+            actions:
+                list: ~
+                new: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+            batch_actions:
+                delete: ~

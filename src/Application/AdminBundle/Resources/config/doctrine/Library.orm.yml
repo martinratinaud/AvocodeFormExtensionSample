@@ -1,6 +1,6 @@
 Application\AdminBundle\Entity\Library:
     type: entity
-    table: null
+    table: afes_library
     repositoryClass: Application\AdminBundle\Entity\Repository\LibraryRepository
     id:
         id:

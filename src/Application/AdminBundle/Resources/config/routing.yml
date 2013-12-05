@@ -2,6 +2,11 @@ ApplicationAdminBundle_admin_application_admin_bundle_Company:
     resource: "@ApplicationAdminBundle/Controller/Company/"
     type:     admingenerator
     prefix:   /company
+    
+ApplicationAdminBundle_admin_application_admin_bundle_Product:
+    resource: "@ApplicationAdminBundle/Controller/Product/"
+    type:     admingenerator
+    prefix:   /product
 
 ApplicationAdminBundle_dashboard:
     path: /

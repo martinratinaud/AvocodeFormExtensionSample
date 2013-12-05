@@ -1,6 +1,6 @@
 Application\AdminBundle\Entity\Media:
     type: entity
-    table: null
+    table: afes_media
     repositoryClass: Application\AdminBundle\Entity\Repository\MediaRepository
     id:
         id:

@@ -1,6 +1,6 @@
 Application\AdminBundle\Entity\Company:
     type: entity
-    table: null
+    table: afes_company
     repositoryClass: Application\AdminBundle\Entity\Repository\CompanyRepository
     id:
         id:

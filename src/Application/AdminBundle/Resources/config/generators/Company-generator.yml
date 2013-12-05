@@ -5,7 +5,9 @@ params:
     concurrency_lock: ~
     bundle_name: AdminBundle
     pk_requirement: ~
-    fields: ~
+    fields:
+        country:
+            formType: afe_select2_country
     object_actions:
         delete: ~
     batch_actions:
@@ -14,7 +16,10 @@ builders:
     list:
         params:
             title: company.title.list
-            display: ~
+            display:
+                - id
+                - name
+                - country
             actions:
                 new: ~
             object_actions:
@@ -26,14 +31,20 @@ builders:
     new:
         params:
             title: company.title.new
-            display: ~
+            display:
+                - name
+                - country
+                - description
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "company.title.edit|{ %object%: Company.name }|"
-            display: ~
+            display:
+                - name
+                - country
+                - description
             actions:
                 save: ~
                 list: ~

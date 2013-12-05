@@ -46,12 +46,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/avocode/FormExtensions.git",
-                "reference": "75c6ea1ccc6a673a3ac32ddef87ad7b0c2ace291"
+                "reference": "66e95eb7c4271f81f06dd5588fdb3899ec3b92a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avocode/FormExtensions/zipball/75c6ea1ccc6a673a3ac32ddef87ad7b0c2ace291",
-                "reference": "75c6ea1ccc6a673a3ac32ddef87ad7b0c2ace291",
+                "url": "https://api.github.com/repos/avocode/FormExtensions/zipball/66e95eb7c4271f81f06dd5588fdb3899ec3b92a0",
+                "reference": "66e95eb7c4271f81f06dd5588fdb3899ec3b92a0",
                 "shasum": ""
             },
             "require": {
@@ -90,7 +90,7 @@
                     "homepage": "https://github.com/avocode/FormExtensions/graphs/contributors"
                 }
             ],
-            "time": "2013-12-05 09:01:00"
+            "time": "2013-12-05 19:37:35"
         },
         {
             "name": "cedriclombardot/admingenerator-generator-bundle",

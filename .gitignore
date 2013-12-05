@@ -2,6 +2,7 @@
 .project
 .settings
 /web/bundles/
+/web/assetic/
 /web/components/
 /app/bootstrap.php.cache
 /app/cache/*

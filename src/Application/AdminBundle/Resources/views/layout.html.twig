@@ -1,19 +1,7 @@
 {% extends 'AdmingeneratorGeneratorBundle::base_admin_assetic_less.html.twig' %}
 
-{% block title %}
-    {{ 'global.title' | trans }}
-{% endblock %}
-
-{% block icons %}
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-{% endblock %}
-
 {% block stylesheets %}
 	{{ parent() }}
-    <link rel="stylesheet" href="{{ asset('bundles/amundikie/css/main.css') }}" type="text/css" media="all" />
-    <!--[if lt IE 9]>
-        <link rel="stylesheet" href="{{ asset('bundles/amundikie/css/ie.css') }}" type="text/css" media="all" />
-    <![endif]-->
 
 	{% include 'AvocodeFormExtensionsBundle::stylesheets_assetic_less.html.twig' %}
     {% if form is defined %}
@@ -26,54 +14,13 @@
     <script type="text/javascript">
         var isDebug = {% if app.debug %}true{% else %}false{% endif %};
     </script>
-    {% javascripts output='assetic/js/compiled/admin.js'
-            '@AmundiKIEBundle/Resources/assets/js/string.js'
-            '@AmundiKIEBundle/Resources/assets/js/logger.js'
-            '@AmundiKIEBundle/Resources/assets/js/ajaxer.js'
-            '@AmundiKIEBundle/Resources/assets/js/main.js'
-     %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
 
     {% include 'AvocodeFormExtensionsBundle::javascripts_assetic_less.html.twig' %}
     {% if form is defined %}
-        <script type="text/javascript" src="{{ asset('/bundles/amundikie/vendor/tiny_mce/jquery.tinymce.js') }}"></script>
         {{ afe_form_javascript(form) }}
     {% endif %}
 {% endblock javascripts %}
 
-{% block navbar %}
-	{% include 'AmundiKIEBundle::header.html.twig' %}
-{% endblock navbar %}
-
 {% block body %}
 	{% block content %}{% endblock %}
-{% endblock %}
-
-{% block footer %}
-	{% include 'AmundiKIEBundle::footer.html.twig' %}
-	<!-- Modal -->
-    <div id="admin-popin" class="modal hide fade" tabindex="-1" role="dialog">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-            <h3></h3>
-        </div>
-        <div class="modal-body"></div>
-    </div>
-{% endblock %}
-
-{% block flashes %}
-    <div id="flashes" class="row-fluid">
-            <div class="alert alert-ajax alert-ajax-template" style="display:none">
-                  <button type="button" class="close" data-dismiss="alert">×</button>
-            </div>
-          {% for type, flashMessages in app.session.flashbag.all() %}
-            {% for flashMessage in flashMessages %}
-              <div class="alert alert-{{ type }}">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                {{ flashMessage|raw }}
-              </div>
-            {% endfor %}
-         {% endfor %}
-     </div><!--/.row-fluid -->
 {% endblock %}

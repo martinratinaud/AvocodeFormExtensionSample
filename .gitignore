@@ -1,4 +1,8 @@
+.buildpath
+.project
+.settings
 /web/bundles/
+/web/components/
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml

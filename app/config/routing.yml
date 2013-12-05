@@ -1,0 +1,2 @@
+ApplicationAdminBundle_import:
+    resource: "@ApplicationAdminBundle/Resources/config/routing.yml"

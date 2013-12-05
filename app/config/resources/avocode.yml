@@ -1,0 +1,3 @@
+avocode_form_extensions:
+    twig:
+        use_form_resources: false

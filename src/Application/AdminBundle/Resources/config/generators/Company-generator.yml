@@ -1,0 +1,52 @@
+generator: admingenerator.generator.doctrine
+params:
+    model: Application\AdminBundle\Entity\Company
+    namespace_prefix: Application
+    concurrency_lock: ~
+    bundle_name: AdminBundle
+    pk_requirement: ~
+    fields: ~
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: company.title.list
+            display: ~
+            actions:
+                new: ~
+            object_actions:
+                edit: ~
+                delete: ~
+    filters:
+        params:
+            display: ~
+    new:
+        params:
+            title: company.title.new
+            display: ~
+            actions:
+                save: ~
+                list: ~
+    edit:
+        params:
+            title: "company.title.edit|{ %object%: Company.name }|"
+            display: ~
+            actions:
+                save: ~
+                list: ~
+    show:
+        params:
+            title: "company.title.show|{ %object%: Company.name }|"
+            display: ~
+            actions:
+                list: ~
+                new: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+            batch_actions:
+                delete: ~

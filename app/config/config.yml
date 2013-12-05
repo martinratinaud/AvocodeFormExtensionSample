@@ -1,6 +1,8 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: resources/admingenerator.yml }
+    - { resource: resources/avocode.yml }
 
 framework:
     #esi:             ~
@@ -28,6 +30,13 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            - AdmingeneratorGeneratorBundle:Form:fields.html.twig
+            - AvocodeFormExtensionsBundle:Form:form_widgets.html.twig
+            - AvocodeFormExtensionsBundle:Form:form_javascripts.html.twig
+            - AvocodeFormExtensionsBundle:Form:form_stylesheets.html.twig
+            - AmundiKIEBundle:Form:fields.html.twig
 
 # Assetic Configuration
 assetic:

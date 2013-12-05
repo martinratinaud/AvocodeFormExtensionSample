@@ -1,0 +1,4 @@
+ApplicationAdminBundle_admin_application_admin_bundle_Company:
+    resource: "@ApplicationAdminBundle/Controller/Company/"
+    type:     admingenerator
+    prefix:   /admin/application_admin_bundle/Company

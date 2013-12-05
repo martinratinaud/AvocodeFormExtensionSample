@@ -1,0 +1,20 @@
+Application\AdminBundle\Entity\Company:
+    type: entity
+    table: null
+    repositoryClass: Application\AdminBundle\Entity\Repository\CompanyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        country:
+            type: string
+            length: 255
+        description:
+            type: text
+    lifecycleCallbacks: {  }

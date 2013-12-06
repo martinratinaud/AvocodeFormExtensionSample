@@ -3,6 +3,7 @@
 namespace Application\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Product
@@ -34,11 +35,29 @@ class Product
      */
     private $stock;
 
+    /**
+     * @var \DateTime
+     */
+    private $publishDate = null;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $companies;
+
+    /**
+     * Default constructor
+     */
+    public function __construct()
+    {
+        $this->companies = new ArrayCollection();
+    }
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -61,7 +80,7 @@ class Product
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -84,7 +103,7 @@ class Product
     /**
      * Get picture
      *
-     * @return string 
+     * @return string
      */
     public function getPicture()
     {
@@ -107,7 +126,7 @@ class Product
     /**
      * Get color
      *
-     * @return string 
+     * @return string
      */
     public function getColor()
     {
@@ -130,10 +149,81 @@ class Product
     /**
      * Get stock
      *
-     * @return integer 
+     * @return integer
      */
     public function getStock()
     {
         return $this->stock;
+    }
+
+    /**
+     * Set publish date
+     *
+     * @param \DateTime $publishDate
+     * @return Product
+     */
+    public function setPublishDate(\DateTime $publishDate)
+    {
+        $this->publishDate = $publishDate;
+
+        return $this;
+    }
+
+    /**
+     * Get publish date
+     *
+     * @return DateTime
+     */
+    public function getPublishDate()
+    {
+        return $this->publishDate;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isPublished()
+    {
+        return !is_null($this->publishDate) && $this->publishDate <= new \DateTime();
+    }
+
+    /**
+     * Add a Company
+     *
+     * @param Company $company
+     * @return Product
+     */
+    public function addCompany(Company $company)
+    {
+        $this->companies->add($company);
+
+        return $this;
+    }
+
+    /**
+     * Remove the $company
+     *
+     * @param Company $company
+     * @return Product
+     */
+    public function removeCompany(Company $company)
+    {
+        foreach ($this->companies as $k => $c) {
+            if ($c->getId() === $company->getId()) {
+                $this->companies->remove($k);
+                break;
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Get companies
+     *
+     * @return ArrayCollection
+     */
+    public function getCompanies()
+    {
+        return $this->companies;
     }
 }

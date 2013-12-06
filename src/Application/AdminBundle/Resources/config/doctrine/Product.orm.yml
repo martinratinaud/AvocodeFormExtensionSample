@@ -20,4 +20,18 @@ Application\AdminBundle\Entity\Product:
             length: 255
         stock:
             type: integer
+        publishDate:
+            type: datetime
+            nullable: true
+    manyToMany:
+        companies:
+            targetEntity: Company
+            joinTable:
+                name: afes_products_companies
+                joinColumns:
+                    product_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    company_id:
+                        referencedColumnName: id
     lifecycleCallbacks: {  }

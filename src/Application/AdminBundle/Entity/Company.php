@@ -3,6 +3,7 @@
 namespace Application\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Company
@@ -29,11 +30,25 @@ class Company
      */
     private $description;
 
+    /**
+     * @var ArrayCollection
+     */
+    private $products;
+
+
+    /**
+     * Default constructor
+     */
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -56,7 +71,7 @@ class Company
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -79,7 +94,7 @@ class Company
     /**
      * Get country
      *
-     * @return string 
+     * @return string
      */
     public function getCountry()
     {
@@ -102,10 +117,50 @@ class Company
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Add a Product
+     *
+     * @param Product $product
+     * @return Company
+     */
+    public function addProduct(Product $product)
+    {
+        $this->products->add($product);
+
+        return $this;
+    }
+
+    /**
+     * Remove the $product
+     *
+     * @param Product $product
+     * @return Company
+     */
+    public function removeProduct(Product $product)
+    {
+        foreach ($this->products as $k => $p) {
+            if ($p->getId() === $product->getId()) {
+                $this->products->remove($k);
+                break;
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Get products
+     *
+     * @return ArrayCollection
+     */
+    public function getProducts()
+    {
+        return $this->products;
     }
 }

@@ -17,4 +17,8 @@ Application\AdminBundle\Entity\Company:
             length: 255
         description:
             type: text
+    manyToMany:
+        products:
+            targetEntity: Product
+            mappedBy: companies
     lifecycleCallbacks: {  }

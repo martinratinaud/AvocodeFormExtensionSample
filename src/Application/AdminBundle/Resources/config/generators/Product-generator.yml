@@ -10,6 +10,14 @@ params:
             formType: afe_mini_colors
         stock:
             formType: afe_knob
+        companies:
+            formType: afe_collection_table
+            addFormOptions:
+                allow_add: true
+                allow_delete: true
+                type: entity
+                options:
+                    class: Application\AdminBundle\Entity\Company
     object_actions:
         delete: ~
     batch_actions:
@@ -30,14 +38,26 @@ builders:
     new:
         params:
             title: product.title.new
-            display: ~
+            display:
+                - name
+                - picture
+                - color
+                - stock
+                - publishDate
+                - companies
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "product.title.edit|{ %object%: Product.name }|"
-            display: ~
+            display:
+                - name
+                - picture
+                - color
+                - stock
+                - publishDate
+                - companies
             actions:
                 save: ~
                 list: ~

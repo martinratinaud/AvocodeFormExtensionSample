@@ -163,4 +163,14 @@ class Company
     {
         return $this->products;
     }
+
+    /**
+     * Magic function __toString
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
